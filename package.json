@@ -15,9 +15,12 @@
 		"lint:format": "biome format",
 		"lint:types": "tsc",
 		"build:data": "npx nugget --dir calendar https://raw.githubusercontent.com/foss-north/fn-static-generator-mkii/master/source/2025/_data/speakers.yaml",
-		"build:calendar": "node --disable-warning=ExperimentalWarning calendar/index.ts"
+		"build:calendar": "node --disable-warning=ExperimentalWarning calendar/index.ts",
+		"build:ticket": "node --disable-warning=ExperimentalWarning pass/index.ts"
 	},
 	"dependencies": {
+		"qr": "0.4.0",
+		"sharp": "0.34.1",
 		"ts-ics": "2.0.1",
 		"valibot": "1.0.0",
 		"yaml": "2.7.1"
