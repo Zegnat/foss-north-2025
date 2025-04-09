@@ -14,7 +14,7 @@ using the script in this repository:
 fnm use --install-if-missing --resolve-engines
 npm ci --omit="dev"
 npm run build:data
-npm run build:calendar > fossnorth2025.ics
+npm run --silent build:calendar > fossnorth2025.ics
 ```
 
 [conference schedule]: https://foss-north.se/2025/schedule.html
