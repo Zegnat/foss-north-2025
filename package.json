@@ -19,8 +19,8 @@
 	},
 	"dependencies": {
 		"ts-ics": "2.0.1",
-		"valibot": "^1.0.0",
-		"yaml": "^2.7.1"
+		"valibot": "1.0.0",
+		"yaml": "2.7.1"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
