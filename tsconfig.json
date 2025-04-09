@@ -1,0 +1,10 @@
+{
+	"extends": "@tsconfig/strictest/tsconfig.json",
+	"compilerOptions": {
+		"allowJs": true,
+		"checkJs": true,
+		"module": "NodeNext",
+		"noEmit": true
+	},
+	"include": ["./calendar/**/*.ts"]
+}

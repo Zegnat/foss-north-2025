@@ -1,0 +1,36 @@
+{
+	"name": "@zegnat/foss-north-2025",
+	"version": "0.1.0",
+	"private": true,
+	"description": "",
+	"license": "0BSD",
+	"author": "Martijn van der Ven <martijn@vanderven.se>",
+	"type": "module",
+	"scripts": {
+		"fix": "run-p --print-label --continue-on-error fix:**",
+		"fix:code": "biome lint --write",
+		"fix:format": "biome format --write",
+		"lint": "run-p --print-label --continue-on-error lint:**",
+		"lint:code": "biome lint",
+		"lint:format": "biome format",
+		"lint:types": "tsc",
+		"build:data": "npx nugget --dir calendar https://raw.githubusercontent.com/foss-north/fn-static-generator-mkii/master/source/2025/_data/speakers.yaml",
+		"build:calendar": "node --disable-warning=ExperimentalWarning calendar/index.ts"
+	},
+	"dependencies": {
+		"ts-ics": "2.0.1",
+		"valibot": "^1.0.0",
+		"yaml": "^2.7.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@tsconfig/strictest": "2.0.5",
+		"@types/node": "22.14.0",
+		"npm-run-all2": "7.0.2",
+		"typescript": "5.8.3"
+	},
+	"engines": {
+		"node": "23.9.0"
+	},
+	"engineStrict": true
+}
