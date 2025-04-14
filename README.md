@@ -28,7 +28,7 @@ for quick generating, but it was easy enough to add it just to my [Catima][]
 wallet.
 
 Call the `build:ticket` command and provide the session ID cookie value from
-the official website. This will return a Catime share link.
+the official website. This will return a Catima share link.
 
 ```fish
 fnm use --install-if-missing --resolve-engines
