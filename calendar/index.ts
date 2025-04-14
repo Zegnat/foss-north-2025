@@ -225,6 +225,7 @@ process.stdout.write(
 				),
 				stamp,
 				...(event.description ? { description: event.description } : {}),
+				timeTransparent: "TRANSPARENT",
 				uid: `net.zegnat.se.foss-north.2025.${md5(event)}`,
 			};
 		}),
