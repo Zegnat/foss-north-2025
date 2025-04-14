@@ -19,6 +19,7 @@ import { parse as yamlParse } from "yaml";
 
 type ShortEvent = {
 	summary: string;
+	description?: string;
 	start: IcsDateObject;
 	end: IcsDateObject;
 	location: "RunAn" | "Scania" | undefined;
@@ -81,6 +82,7 @@ const SpeakersSchema = array(
 		title: string(),
 		day: optional(pipe(string(), picklist(["apr14", "apr15"]))),
 		copresenters: optional(array(object({ name: string() }))),
+		abstract: array(string()),
 	}),
 );
 const speakers = validateData(SpeakersSchema, data);
@@ -148,6 +150,7 @@ const events: ShortEvent[] = speakers.flatMap((speaker) => {
 		start: dateTime(speaker.day === "apr14" ? 14 : 15, startTime),
 		end: dateTime(speaker.day === "apr14" ? 14 : 15, endTime),
 		location: isRunAn ? "RunAn" : "Scania",
+		description: speaker.abstract.join("\n\n"),
 	};
 });
 
@@ -221,6 +224,7 @@ process.stdout.write(
 					"Chalmersplatsen 1, 412 58 Göteborg",
 				),
 				stamp,
+				...(event.description ? { description: event.description } : {}),
 				uid: `net.zegnat.se.foss-north.2025.${md5(event)}`,
 			};
 		}),
